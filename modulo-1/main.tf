@@ -24,3 +24,12 @@ resource "aws_s3_bucket_object" "object" {
   source = "world.txt"
   etag = "${filemd5("world.txt")}"
 }
+
+output "bucket" {
+  value = "${aws_s3_bucket.b.id}"
+}
+
+output "etag" {
+  value = "${aws_s3_bucket_object.object.etag}"
+}
+
