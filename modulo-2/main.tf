@@ -1,4 +1,4 @@
 resource "aws_instance" "web" {
-  ami = ""
+  ami           = ""
   instance_type = ""
 }

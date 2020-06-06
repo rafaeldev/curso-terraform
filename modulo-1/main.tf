@@ -22,7 +22,7 @@ resource "aws_s3_bucket_object" "object" {
   bucket = "${aws_s3_bucket.b.id}"
   key    = "hello-new-world.txt"
   source = "world.txt"
-  etag = "${filemd5("world.txt")}"
+  etag   = "${filemd5("world.txt")}"
 }
 
 output "bucket" {
@@ -32,4 +32,3 @@ output "bucket" {
 output "etag" {
   value = "${aws_s3_bucket_object.object.etag}"
 }
-
