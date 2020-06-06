@@ -17,3 +17,9 @@ resource "aws_s3_bucket" "b" {
     Environment = "Test"
   }
 }
+
+resource "aws_s3_bucket_object" "object" {
+  bucket = "${aws_s3_bucket.b.id}"
+  key    = "hello-new-world.txt"
+  source = "world.txt"
+}
