@@ -10,6 +10,16 @@ module "bucket" {
   source = "./s3"
 
   name = "my-bucket-${random_id.bucket.hex}"
+  versioning = true
+
+  tags = {
+    "Name" = "Bucket maneiro"
+  }
+
+  create_object = true
+  object_key = "files/${random_id.bucket.dec}"
+  object_source = "./file.txt"
+}
 
 module "bucket_2" {
   source = "./s3"
