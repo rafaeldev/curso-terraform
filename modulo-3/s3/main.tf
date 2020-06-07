@@ -9,7 +9,7 @@ resource "aws_s3_bucket" "this" {
   tags = "${var.tags}"
 }
 
-resource "aws_s3_bucket_object" "object" {
+resource "aws_s3_bucket_object" "this" {
   count = "${var.create_object ? 1 : 0}"
 
   bucket = "${aws_s3_bucket.this.id}"
